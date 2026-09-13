@@ -1,0 +1,164 @@
+.header {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  z-index: 50;
+  height: var(--nav-height);
+  background: rgba(10, 13, 22, 0.75);
+  backdrop-filter: blur(12px);
+  border-bottom: 1px solid var(--border);
+}
+
+.nav {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  height: 100%;
+}
+
+.logo {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  font-weight: 800;
+  font-size: 1.15rem;
+}
+
+.logoMark {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 36px;
+  height: 36px;
+  border-radius: 10px;
+  background: linear-gradient(120deg, var(--accent), var(--accent-2));
+  color: #0a0d16;
+  font-size: 0.8rem;
+  letter-spacing: 0.02em;
+}
+
+.logoText {
+  color: var(--text);
+}
+
+.logoTextAccent {
+  color: var(--accent-2);
+}
+
+.toggle {
+  display: none;
+  flex-direction: column;
+  justify-content: center;
+  gap: 6px;
+  background: transparent;
+  border: 0;
+  padding: 8px;
+}
+
+.bar {
+  width: 22px;
+  height: 2px;
+  background: var(--text);
+  border-radius: 2px;
+  transition: 0.2s ease;
+}
+
+.barOpenTop {
+  width: 22px;
+  height: 2px;
+  background: var(--text);
+  border-radius: 2px;
+  transform: translateY(4px) rotate(45deg);
+}
+
+.barOpenBottom {
+  width: 22px;
+  height: 2px;
+  background: var(--text);
+  border-radius: 2px;
+  margin-top: -8px;
+  transform: rotate(-45deg);
+}
+
+.links {
+  display: flex;
+  align-items: center;
+  gap: 28px;
+  list-style: none;
+}
+
+.link {
+  color: var(--text-muted);
+  font-weight: 500;
+  font-size: 0.95rem;
+  transition: color 0.15s ease;
+}
+
+.link:hover {
+  color: var(--text);
+}
+
+.linkActive {
+  color: var(--accent-soft);
+  font-weight: 600;
+  font-size: 0.95rem;
+}
+
+.linkActive::after {
+  content: "";
+  display: block;
+  height: 2px;
+  border-radius: 2px;
+  margin-top: 4px;
+  background: linear-gradient(90deg, var(--accent), var(--accent-2));
+}
+
+.cta {
+  display: none;
+}
+
+@media (max-width: 768px) {
+  .toggle {
+    display: flex;
+  }
+
+  .links {
+    position: absolute;
+    top: var(--nav-height);
+    left: 0;
+    right: 0;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 4px;
+    padding: 16px 24px 24px;
+    background: rgba(10, 13, 22, 0.97);
+    border-bottom: 1px solid var(--border);
+    backdrop-filter: blur(12px);
+    transform: translateY(-12px);
+    opacity: 0;
+    pointer-events: none;
+    transition: 0.2s ease;
+  }
+
+  .linksOpen {
+    transform: translateY(0);
+    opacity: 1;
+    pointer-events: auto;
+  }
+
+  .link,
+  .linkActive {
+    display: block;
+    padding: 10px 0;
+  }
+
+  .linkActive::after {
+    display: none;
+  }
+
+  .cta {
+    display: block;
+    margin-top: 12px;
+  }
+}

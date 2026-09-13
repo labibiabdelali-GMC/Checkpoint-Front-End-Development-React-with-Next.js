@@ -1,0 +1,236 @@
+.hero {
+  display: grid;
+  grid-template-columns: 1.1fr 0.9fr;
+  align-items: center;
+  gap: 48px;
+  padding-top: 72px;
+  padding-bottom: 80px;
+}
+
+.heroText {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+}
+
+.eyebrow {
+  color: var(--accent-soft);
+  font-weight: 600;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  font-size: 0.85rem;
+  margin-bottom: 14px;
+}
+
+.title {
+  font-size: clamp(2.6rem, 7vw, 4.3rem);
+  font-weight: 800;
+  letter-spacing: -0.03em;
+  line-height: 1.05;
+  margin-bottom: 8px;
+}
+
+.role {
+  font-size: clamp(1.2rem, 3vw, 1.6rem);
+  font-weight: 600;
+  color: var(--text-muted);
+  margin-bottom: 20px;
+}
+
+.intro {
+  color: var(--text-muted);
+  max-width: 540px;
+  margin-bottom: 32px;
+}
+
+.actions {
+  display: flex;
+  gap: 14px;
+  flex-wrap: wrap;
+}
+
+.serverNote {
+  margin-top: 28px;
+  font-size: 0.8rem;
+  color: var(--text-muted);
+  display: inline-flex;
+  gap: 6px;
+  padding: 8px 14px;
+  border: 1px dashed var(--border);
+  border-radius: 12px;
+}
+
+.serverNote time {
+  color: var(--accent-soft);
+}
+
+.heroMedia {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 24px;
+  position: relative;
+}
+
+.avatarFrame {
+  position: relative;
+  width: min(340px, 80vw);
+  aspect-ratio: 1;
+  border-radius: 50%;
+  padding: 10px;
+  background: linear-gradient(120deg, var(--accent), var(--accent-2));
+  box-shadow: var(--shadow), 0 0 80px rgba(124, 108, 255, 0.25);
+}
+
+.avatarImage {
+  width: 100%;
+  height: 100%;
+  border-radius: 50%;
+  object-fit: cover;
+}
+
+.badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  padding: 8px 16px;
+  border: 1px solid var(--border);
+  border-radius: 999px;
+  background: var(--bg-card);
+  font-size: 0.85rem;
+  color: var(--text-muted);
+}
+
+.badgeDot {
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  background: var(--success);
+  box-shadow: 0 0 0 4px rgba(52, 211, 153, 0.18);
+}
+
+.skills {
+  padding-top: 40px;
+  padding-bottom: 64px;
+  text-align: center;
+}
+
+.skillsTitle {
+  font-size: 1.15rem;
+  font-weight: 600;
+  color: var(--text-muted);
+  margin-bottom: 28px;
+}
+
+.skillsList {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 12px;
+  list-style: none;
+}
+
+.skill {
+  padding: 8px 18px;
+  border: 1px solid var(--border);
+  background: var(--bg-card);
+  border-radius: 999px;
+  font-size: 0.9rem;
+  font-weight: 500;
+  transition: 0.15s ease;
+}
+
+.skill:hover {
+  border-color: var(--accent);
+  color: var(--accent-soft);
+  transform: translateY(-2px);
+}
+
+.featured {
+  padding-top: 24px;
+  padding-bottom: 80px;
+}
+
+.featuredHeader {
+  display: flex;
+  align-items: baseline;
+  justify-content: space-between;
+  gap: 16px;
+  flex-wrap: wrap;
+}
+
+.allLink {
+  color: var(--accent-soft);
+  font-weight: 600;
+  font-size: 0.95rem;
+}
+
+.allLink:hover {
+  color: var(--accent-2);
+}
+
+.grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 24px;
+  margin-top: 8px;
+}
+
+.card {
+  padding: 28px;
+  border: 1px solid var(--border);
+  background: var(--bg-card);
+  border-radius: var(--radius);
+  transition: 0.2s ease;
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.card:hover {
+  border-color: var(--accent);
+  transform: translateY(-4px);
+  box-shadow: var(--shadow);
+}
+
+.card h3 {
+  font-size: 1.2rem;
+}
+
+.card p {
+  color: var(--text-muted);
+  font-size: 0.95rem;
+  flex: 1;
+}
+
+.cardTech {
+  font-size: 0.8rem;
+  color: var(--accent-soft);
+  font-weight: 600;
+  margin-top: 8px;
+}
+
+@media (max-width: 900px) {
+  .hero {
+    grid-template-columns: 1fr;
+    text-align: center;
+    padding-top: 48px;
+    gap: 48px;
+  }
+
+  .heroText,
+  .actions,
+  .serverNote {
+    align-items: center;
+  }
+
+  .actions,
+  .serverNote {
+    justify-content: center;
+  }
+
+  .intro {
+    margin-left: auto;
+    margin-right: auto;
+  }
+}
