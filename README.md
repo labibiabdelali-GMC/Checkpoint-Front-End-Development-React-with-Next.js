@@ -44,4 +44,6 @@ Edit your details in `pages/contact.tsx`, swap images in `public/images/`, and l
 
 ## Deploy
 
+Live demo: https://checkpoint-front-end-development-re.vercel.app/
+
 Push to GitHub and import into [Vercel](https://vercel.com) — no extra config needed.
